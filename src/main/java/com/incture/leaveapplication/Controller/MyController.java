@@ -92,6 +92,19 @@ Employee E = O.get();
             return L.getLevel();
         }
     }
+ 
+ @GetMapping("/leave/{LID}")
+    public Leave leaveStatus( @PathVariable Integer LID)
+    {
+        Optional<Leave> O= leaveRepository.findById(LID);
+        if(O.isEmpty())
+            throw new ResourceNotFoundException("Leave with ID "+ LID+ " not found");
+        else
+        {
+            Leave L= O.get();
+            return L();
+        }
+    }
 
     @GetMapping("/appliedleaves/{ID}")
     public List<Leave> appliedLeaves(@PathVariable Long ID)
