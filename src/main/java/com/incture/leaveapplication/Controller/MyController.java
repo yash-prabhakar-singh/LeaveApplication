@@ -63,7 +63,7 @@ Employee E = O.get();
     }
 
     @PutMapping("/applyleave/{ID}")
-    public Employee applyLeave(@PathVariable Long ID, @RequestBody LeaveWrap lw) {
+    public boolean applyLeave(@PathVariable Long ID, @RequestBody LeaveWrap lw) {
         Optional<Employee> O = employeeRepository.findById(ID);
         Employee E = O.get();
         Leave L = null;
@@ -76,7 +76,7 @@ Employee E = O.get();
         leaveRepository.save(L);
         E.getLeaveList().add(L);
 
-        return E;
+        return true;
 
     }
 
