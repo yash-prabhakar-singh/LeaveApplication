@@ -46,7 +46,7 @@ public class MyController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Employee> loginEmployee(@RequestParam String Email, @RequestParam String Pass) {
+    public ResponseEntity<Employee> loginEmployee(@RequestParam("Email") String Email, @RequestParam("Pass") String Pass) {
     Optional<Employee> O= Optional.ofNullable(employeeRepository.findByEmail(Email));
     if(O.isPresent()) {
 Employee E = O.get();
