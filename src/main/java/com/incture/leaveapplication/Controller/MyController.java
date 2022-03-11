@@ -57,7 +57,7 @@ Employee E = O.get();
     }
     else
     {
-        throw new ResourceNotFoundException("User with email "+ Email + " not found");
+        throw new ResourceNotFoundException("User with email "+ employeelogin.getEmail() + " not found");
     }
     }
 
