@@ -2,6 +2,7 @@ package com.incture.leaveapplication.Controller;
 
 import com.incture.leaveapplication.Entity.Employee;
 import com.incture.leaveapplication.Entity.EmployeeWrap;
+import com.incture.leaveapplication.Entity.EmployeeWrap;
 import com.incture.leaveapplication.Entity.Leave;
 import com.incture.leaveapplication.Exception.ResourceNotFoundException;
 import com.incture.leaveapplication.Repository.LeaveRepository;
@@ -46,11 +47,11 @@ public class MyController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Employee> loginEmployee(@RequestParam("Email") String Email, @RequestParam("Pass") String Pass) {
-    Optional<Employee> O= Optional.ofNullable(employeeRepository.findByEmail(Email));
+    public ResponseEntity<Employee> loginEmployee(@RequestBody EmployeeLogin employeelogin) {
+    Optional<Employee> O= Optional.ofNullable(employeeRepository.findByEmail(employeelogin.getEmail));
     if(O.isPresent()) {
 Employee E = O.get();
-        if (E.getPassword().equals(Pass)) { return ResponseEntity.ok(E);
+        if (E.getPassword().equals(employeelogin.getPassword)) { return ResponseEntity.ok(E);
         } else {return new ResponseEntity("Password is wrong!",HttpStatus.BAD_REQUEST);
         }
     }
