@@ -120,7 +120,19 @@ Employee E = O.get();
              return leaveRepository.save(L);
         }
     }
-
+@PutMapping("/denyleave/{LID}")
+    public Leave denyLeave(@PathVariable Integer LID)
+    {
+        Optional<Leave> O= leaveRepository.findById(LID);
+        if(O.isEmpty())
+            throw new ResourceNotFoundException("Leave with ID "+ LID+ " not found");
+        else
+        {
+            Leave L= O.get();
+             L.setLevel(-1);
+             return leaveRepository.save(L);
+        }
+    }
 
     @PutMapping("/changestatusManager/{LID}")
     public Leave changeStatusManager(@PathVariable Integer LID)
