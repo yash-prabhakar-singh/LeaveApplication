@@ -63,14 +63,14 @@ Employee E = O.get();
     }
 
     @PutMapping("/applyleave/{ID}")
-    public Employee applyLeave(@PathVariable Long ID, @RequestBody LeaveWrap) {
+    public Employee applyLeave(@PathVariable Long ID, @RequestBody LeaveWrap lw) {
         Optional<Employee> O = employeeRepository.findById(ID);
         Employee E = O.get();
         Leave L = null;
         if (leavetype == 'm')
-            L = new Leave(1, leavetype, Desc, E, E.getName());
+            L = new Leave(1, lw.getType(), lw.getDescription, E, E.getName());
         else
-            L = new Leave(0, leavetype, Desc, E, E.getName());
+            L = new Leave(0, lw.getType(), lw.getDescription(), E, E.getName());
 
 
         leaveRepository.save(L);
