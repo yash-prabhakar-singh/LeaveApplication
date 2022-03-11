@@ -4,7 +4,7 @@ package com.incture.leaveapplication.Entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmployeeWrap {
+public class EmployeeLogin {
 
 
 
@@ -15,7 +15,7 @@ public class EmployeeWrap {
 
 
 
-    public EmployeeWrap(String email, String password) {
+    public EmployeeLogin(String email, String password) {
         
         this.password = password;
 
@@ -24,7 +24,7 @@ public class EmployeeWrap {
 
     }
 
-    public EmployeeWrap() {
+    public EmployeeLogin() {
 
     }
 
