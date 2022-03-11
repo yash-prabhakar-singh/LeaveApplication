@@ -102,7 +102,7 @@ Employee E = O.get();
         else
         {
             Leave L= O.get();
-            return L();
+            return L;
         }
     }
 
