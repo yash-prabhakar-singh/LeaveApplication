@@ -48,10 +48,10 @@ public class MyController {
 
     @PostMapping("/login")
     public ResponseEntity<Employee> loginEmployee(@RequestBody EmployeeLogin employeelogin) {
-    Optional<Employee> O= Optional.ofNullable(employeeRepository.findByEmail(employeelogin.getEmail));
+    Optional<Employee> O= Optional.ofNullable(employeeRepository.findByEmail(employeelogin.getEmail()));
     if(O.isPresent()) {
 Employee E = O.get();
-        if (E.getPassword().equals(employeelogin.getPassword)) { return ResponseEntity.ok(E);
+        if (E.getPassword().equals(employeelogin.getPassword())) { return ResponseEntity.ok(E);
         } else {return new ResponseEntity("Password is wrong!",HttpStatus.BAD_REQUEST);
         }
     }
