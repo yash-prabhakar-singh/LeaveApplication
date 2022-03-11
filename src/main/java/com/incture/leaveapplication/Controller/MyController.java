@@ -2,6 +2,7 @@ package com.incture.leaveapplication.Controller;
 
 import com.incture.leaveapplication.Entity.Employee;
 import com.incture.leaveapplication.Entity.EmployeeWrap;
+import com.incture.leaveapplication.Entity.LeaveWrap;
 import com.incture.leaveapplication.Entity.EmployeeLogin;
 import com.incture.leaveapplication.Entity.Leave;
 import com.incture.leaveapplication.Exception.ResourceNotFoundException;
@@ -62,7 +63,7 @@ Employee E = O.get();
     }
 
     @PutMapping("/applyleave/{ID}")
-    public Employee applyLeave(@PathVariable Long ID, @RequestParam char leavetype , @RequestParam String Desc) {
+    public Employee applyLeave(@PathVariable Long ID, @RequestBody LeaveWrap) {
         Optional<Employee> O = employeeRepository.findById(ID);
         Employee E = O.get();
         Leave L = null;
