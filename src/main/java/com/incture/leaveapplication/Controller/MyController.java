@@ -94,7 +94,7 @@ Employee E = O.get();
     }
  
  @GetMapping("/leave/{LID}")
-    public Leave leaveStatus( @PathVariable Integer LID)
+    public Leave leave( @PathVariable Integer LID)
     {
         Optional<Leave> O= leaveRepository.findById(LID);
         if(O.isEmpty())
