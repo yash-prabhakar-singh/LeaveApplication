@@ -67,8 +67,8 @@ Employee E = O.get();
         Optional<Employee> O = employeeRepository.findById(ID);
         Employee E = O.get();
         Leave L = null;
-        if (leavetype == 'm')
-            L = new Leave(1, lw.getType(), lw.getDescription, E, E.getName());
+        if (lw.getType() == 'm')
+            L = new Leave(1, lw.getType(), lw.getDescription(), E, E.getName());
         else
             L = new Leave(0, lw.getType(), lw.getDescription(), E, E.getName());
 
