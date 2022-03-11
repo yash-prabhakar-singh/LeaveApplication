@@ -6,10 +6,10 @@ package com.incture.leaveapplication.Entity;
 public class LeaveWrap {
     
     
-private int level;
+
 private char type;
 private String description;
-private String appliedby;
+
 
 
 
@@ -18,13 +18,7 @@ private String appliedby;
 
     }
 
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
+   
 
     public char getType() {
         return type;
@@ -44,20 +38,13 @@ private String appliedby;
 
    
 
-    public LeaveWrap(int level, char type, String description, String appliedby) {
-        this.level = level;
+    public LeaveWrap(char type, String description) {
+        
         this.type = type;
         this.description = description;
-        
-        this.appliedby= appliedby;
+       
     }
 
    
-    public String getAppliedby() {
-        return appliedby;
-    }
-
-    public void setAppliedby(String appliedby) {
-        this.appliedby = appliedby;
-    }
+  
 }
