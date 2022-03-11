@@ -2,7 +2,7 @@ package com.incture.leaveapplication.Controller;
 
 import com.incture.leaveapplication.Entity.Employee;
 import com.incture.leaveapplication.Entity.EmployeeWrap;
-import com.incture.leaveapplication.Entity.EmployeeWrap;
+import com.incture.leaveapplication.Entity.EmployeeLogin;
 import com.incture.leaveapplication.Entity.Leave;
 import com.incture.leaveapplication.Exception.ResourceNotFoundException;
 import com.incture.leaveapplication.Repository.LeaveRepository;
