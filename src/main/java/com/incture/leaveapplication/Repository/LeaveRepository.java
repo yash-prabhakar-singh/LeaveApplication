@@ -12,9 +12,9 @@ import java.util.List;
 @Repository
 public interface LeaveRepository extends JpaRepository<Leave, Integer> {
 
-    @Query("SELECT l FROM Leave l WHERE l.level=0 ORDER BY l.id ASC ")
+    @Query("SELECT l FROM Leave l WHERE l.level=0 ORDER BY l.id DESC ")
     List<Leave> findLeavesforManager();
 
-    @Query("SELECT l FROM Leave l WHERE l.level=1 ORDER BY l.id ASC ")
+    @Query("SELECT l FROM Leave l WHERE l.level=1 ORDER BY l.id DESC ")
     List<Leave> findLeavesforHR();
 }
